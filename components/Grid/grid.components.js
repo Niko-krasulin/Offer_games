@@ -1,5 +1,5 @@
 import {data} from "../../data/data.js";
-// import {Offer} from './Offer/offer.components.js'
+import {Offer} from './Offer/offer.components.js'
 
 export function Grid() {
     const container = document.createElement('table')
@@ -12,9 +12,11 @@ export function Grid() {
 
             const cellEl = document.createElement('td')
 
-            cellEl.append(Offer())
+            if (x === data.coords.x && y === data.coords.y) {
+                cellEl.append(Offer())
+            }
+                rowEl.append(cellEl)
 
-            rowEl.append(cellEl)
         }
 
         container.append(rowEl)
